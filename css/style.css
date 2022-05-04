@@ -22,7 +22,7 @@ position: relative;
     width: 960px;
     height: 540px;
     margin: 0 auto;
-position: relative;
+position: fixed;
 }
 
 img{
