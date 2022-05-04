@@ -1,0 +1,319 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Moonrocks&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch&family=Rubik+Moonrocks&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: black;
+}
+
+#container{
+    width: 960px;
+    height: 540px;
+    margin: 0 auto;
+position: relative;
+}
+
+.sections{
+    width: 960px;
+    height: 540px;
+    margin: 0 auto;
+position: relative;
+}
+
+img{
+    display: block;
+    margin: 0 auto;
+}
+
+.button{
+    
+    color: #FF6EC7;
+ border-radius: 15px;
+ border-style:ridge;
+ border-width: 4px;
+ border-color:#6BEEFF;
+ padding: 4px;
+    padding-left: 22px;
+    padding-right: 22px;
+    text-shadow: 2px 2px 10px 2px;
+    position: absolute;
+    font-size: 22px;
+    top: 500px;
+    left: 425px;
+    box-shadow: 2px 2px 50px 2px #6BEEFF;
+    overflow: hidden;
+   text-shadow: 1px 1px 8px #f5129e;
+    transition: .2s;
+    font-family: 'Cabin Sketch', cursive;
+
+}
+
+.button:hover{
+    overflow: visible;
+    cursor: pointer;
+    transform: scale(0.9);
+    
+    transition: .3s;
+}
+
+h1{
+    position: absolute;
+    padding-top: 100px;
+font-size: 60px;
+color: #f5129e;
+font-family: 'Cabin Sketch', cursive;
+text-align: center;
+top: 100px;
+left: 380px;
+}
+
+h2{
+    position: absolute;
+font-size: 40px;
+color: #6BEEFF;
+font-family: 'Cabin Sketch', cursive;
+margin: 0 auto;
+text-align: center;
+width: 700px;
+top: 340px;
+left: 150px;
+}
+
+.arrow{
+    position: absolute;
+    top: 560px;
+left: 470px;
+transition: .7s;
+width: 60px;
+height: 60px;
+
+}
+
+.arrow:hover{  
+    cursor: pointer;
+    transform: scale(0.8);
+    transition: .7s;
+    transform: translateX(30px);
+}
+
+.room1{
+    position: absolute;
+    top: 100px;
+    left: 0%;
+}
+
+#inventory {
+	height: 70px;
+	width: 260px;
+	background-color: black;
+	
+	border-radius: 15px;
+	position: absolute;
+	left: 0;
+	right: 0;
+	display: flex;
+	justify-content: space-between;
+	margin: auto;
+	z-index: 2;
+
+}
+
+.inventory-item {
+	width: 64px;
+	height: 64px;
+	background-color: whitesmoke;
+	background-size: contain;
+	margin: auto;
+    border: 3px solid #6BEEFF;
+	border-radius: 10px;
+	position: relative;
+}
+
+h3{
+    position: absolute;
+    font-size: 20px;
+    color: #6BEEFF;
+    font-family: 'Cabin Sketch', cursive;
+    margin: 0 auto;
+    text-align: center;
+    width: 700px;
+    top: -85px;
+    left: 140px;
+}
+
+#things img{
+    display: block;
+    position: absolute;
+   
+}
+
+.chair{
+    top: 160px;
+    left: 330px;
+    width: 130px;
+}
+
+.cds{
+    top: 310px;
+    left: 710px;
+    width:90px;
+}
+
+.cup{
+    top: 77px;
+    left: 327px;
+    width:25px;
+}
+
+.drawings{
+    top: 93px;
+    left: 447px;
+    width:125px;
+}
+
+.headphones{
+    top: 253px;
+    left: 178px;
+    width:45px;
+}
+
+.bookcase{
+    top: 153px;
+    left: 443px;
+    transform: scale(0.7);
+}
+
+.pillow1{
+    top: 223px;
+    left: 572px;
+    transform: scale(0.4);
+}
+
+.pillow2{
+    top: 255px;
+    left: 628px;
+    transform: scale(0.4);
+}
+
+.motivationText{
+    top: 127px;
+    left: 403px;
+    transform: scale(0.8);
+}
+
+.lamp{
+    top: 34px;
+    left: 220px;
+    transform: scale(0.7);
+}
+
+.posters{
+    top: 92px;
+    left: 93px;
+    transform: scale(0.6);
+    opacity: 0;
+}
+
+.books{
+    top: 74px;
+    left: 233px;
+    transform: scale(0.8);
+}
+
+.frame{
+    top: 50px;
+    left: 163px;
+    transform: scale(0.8);
+}
+
+.mouse{
+    top: 244px;
+    left: 333px;
+    transform: scale(0.8);
+}
+
+.monitor1{
+    top: 158px;
+    left: 237px;
+    width: 105px;
+ 
+}
+
+.monitor{
+    top: 158px;
+    left: 237px;
+    width: 107px;
+ 
+}
+
+.mic{
+    top: 46px;
+    left: 287px;
+    transform: scale(0.8);
+}
+
+.trophy{
+    top: 37px;
+    left: 331px;
+    transform: scale(0.8);
+}
+
+.virtualRealityGlasses{
+    top: 67px;
+    left: 357px;
+    transform: scale(0.7);
+}
+
+.speakers{
+    top: 168px;
+    left: 169px;
+    transform: scale(0.7);
+}
+
+.disappeared{
+    visibility: hidden;  
+}
+
+@keyframes turnOnDesktop{
+    0%{transform:scale(1) translateX(0%) translateY(0%);
+       
+    }100%{
+transform:scale(12) translateX(17%) translateY(10%);
+
+    }
+}
+
+.gamesFolder{
+    top: 78px;
+    left: 69px;
+    transform: scale(0.5);
+    transition: .5s;
+}
+.gamesFolder:hover{
+    transform: scale(0.8);
+    transition: .5s;
+}
+
+.folder{
+    top: 78px;
+    left: 319px;
+    transform: scale(0.5);
+}
+.chat{
+    top: 78px;
+    left: 569px;
+    transform: scale(0.5);
+}
+.battery{
+    top: -50px;
+    left: 769px;
+    transform: scale(0.2);
+}
+.tip{
+    padding-top: 25px;
+}

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Moonrocks&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch&family=Rubik+Moonrocks&display=swap"
+        rel="stylesheet">
+    <title>Eindopdracht</title>
+</head>
+
+<body>
+
+    <div id="container">
+
+        <section id="section1" class="sections">
+            <img src="img/6_generated.jpg" alt="" width="660">
+            <div class="button">START</div>
+        </section>
+
+
+        <section id="section2" class="disappeared" class="sections">
+            <img src="img/Asset 1@2x.jpeg" width="660">
+            <h1>The Room</h1>
+            <br><br><br>
+            <h2>The room you are in is locked. The key is somewhere in the room. Find the key so you can open the door.
+                Look for clues to find the key.</h2>
+            <div class="arrow">
+                <img src="img/arrow.png" alt="arrow" width="60px">
+            </div>
+        </section>
+
+
+        <section id="section3" class="disappeared">
+            <div class="room1" class="sections">
+                <img src="img/room5.png" alt="room" width="960px">
+                <div id=things>
+                    <h3>Play some computer games. These will give you the insights you need to find the
+                        key.
+                        Put your headphones on your ears, sit on the chair, put on the virtual reality glasses, put your
+                        hand on the mouse and click on the monitor screen.</h3>
+                    <img src="img/chair.png" alt="chair" class="chair">
+                    <img src="img/cds.png" alt="cds" class="cds">
+                    <img src="img/cup.png" alt="cup" class="cup">
+                    <img src="img/drawings.png" alt="drawings" class="drawings">
+                    <img src="img/headphones.png" alt="headphones" class="headphones">
+                    <img src="img/microphone.png" alt="microphone" class="mic">
+                    <img src="img/motivatieText.png" alt="text" class="motivationText">
+                    <img src="img/lamp.png" alt="lamp" class="lamp">
+                    <img src="img/posters.png" alt="poster" class="posters">
+                    <img src="img/trophy.png" alt="trophy" class="trophy">
+                    <img src="img/bookcase2.png" alt="" class="bookcase">
+                    <img src="img/pillow1.png" alt="" class="pillow1">
+                    <img src="img/pillow2.png" alt="" class="pillow2">
+                    <img src="img/pillow2" alt="" class="pillow2">
+                    <img src="img/books.png" alt="" class="books">
+                    <img src="img/frame.png" alt="" class="frame">
+                    <img src="img/mouse.png" alt="" class="mouse">
+                    <img src="img/videoglasses.png" alt="virtual reality glasses" class="virtualRealityGlasses">
+                    <img src="img/speakers.png" alt="speakers" class="speakers">
+                    <img src="img/monitor.png" alt="monitor" class="monitor">
+                    <img src="img/monitor1.png" alt="monitor" class="monitor1">
+                </div>
+                <div id="inventory">
+                    <div class="inventory-item" data-tool="">
+                    </div>
+                    <div class="inventory-item" data-tool="">
+                    </div>
+                    <div class="inventory-item" data-tool="">
+                    </div>
+                    <div class="inventory-item" data-tool="">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="section4" class="disappeared">
+            <div class="room1" class="sections">
+                <img src="img/vecteezy_grid-room-in-perspective-vector-illustration-in-3d-style_6471587.jpg"
+                    alt="virtual reality room" width="960px" height="540px">
+                <div id=things>
+                    <h3 class="tip">Click on games icon.</h3>
+                    <img src="img/games.png" alt="" class="gamesFolder">
+                    <img src="img/folder.png" alt="" class="folder">
+                    <img src="img/chat.png" alt="" class="chat">
+                    <img src="img/battery.png" alt="" class="battery">
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+
+
+    <script>
+        let body = document.querySelector("body");
+        let container = document.querySelector("#container");
+        let sections = document.querySelector(".sections");
+        let button = document.querySelector(".button");
+        let section1 = document.querySelector("#section1");
+        let section2 = document.querySelector("#section2");
+        let section3 = document.querySelector("#section3");
+        let section4 = document.querySelector("#section4");
+        let tips = document.querySelector("h3");
+
+        let buttonSound1 = new Audio('sounds/mixkit-retro-arcade-casino-notification-211.wav');
+        let buttonSound2 = new Audio('sounds/mixkit-video-game-retro-click-237.wav');
+        let buttonSound3 = new Audio('sounds/sound1.mp3');
+        let buttonSound4 = new Audio('sounds/chair.wav');
+        let music1 = new Audio('sounds/fairytales-danijel-zambo-main-version-02-49-1381.mp3');
+        let music2 = new Audio('sounds/stardust-danijel-zambo-main-version-03-13-1372.mp3');
+
+        button.addEventListener("click", button1);
+
+
+        let headphonesFinded = false;
+
+
+        //Section2
+
+        function button1() {
+            section1.classList.add("disappeared");
+            section2.classList.remove("disappeared");
+           
+            buttonSound1.play();
+            music1.play();
+            music1.volume = 0.2;
+            let arrow = document.querySelector(".arrow");
+
+            if (arrow) {
+                arrow.addEventListener('click', () => {
+                    buttonSound2.play()
+                    section2.classList.add("disappeared");
+                    section3.classList.remove("disappeared");
+                    
+                    var inventoryItems = document.querySelectorAll(".inventory-item");
+                    var currentItem = 0;
+                    var clickHeadphones = false;
+                    var clickChair = false;
+                    var clickMouse = false;
+                    var clickMonitor = false;
+                    var clickVRGlasses = false;
+                    var placeHeadphones;
+                    var placeChair;
+                    var placeMonitor;
+                    var placeVRGlasses;
+
+                    var things = document.querySelector("#things");
+                    var headphones = document.querySelector(".headphones");
+                    var chair = document.querySelector(".chair");
+                    var mouse = document.querySelector(".mouse");
+                    var monitor1 = document.querySelector(".monitor1");
+                    var monitor = document.querySelector(".monitor");
+                    var inventory = document.querySelector("#inventory");
+                    var vrGlasses = document.querySelector(".virtualRealityGlasses");
+
+                    let thingsClicked = false;
+
+                    if (things) {
+
+
+                        headphones.addEventListener("click", () => {
+                            buttonSound3.play()
+
+
+                            if (!clickHeadphones) {
+                                placeHeadphones = currentItem;
+                                currentItem++;
+                            }
+
+                            inventoryItems[placeHeadphones].innerHTML = `<img src="img/headphones.png" alt="headphones" width="56px">`;
+                            inventoryItems[placeHeadphones].setAttribute("data-tool", "headphones");
+                            headphones.classList.add("disappeared");
+                            clickHeadphones = true;
+                            tips.innerHTML = "Good, you found the headphones!"
+                            tips.classList.add("tip")
+
+                        });
+
+                        chair.addEventListener("click", () => {
+                            buttonSound4.play()
+
+                            if (!clickChair) {
+                                placeChair = currentItem;
+                                currentItem++;
+                            }
+
+                            inventoryItems[placeChair].innerHTML = `<img src="img/chair.png" alt="chair" height="60px">`;
+                            inventoryItems[placeChair].setAttribute("data-tool", "chair");
+                            chair.classList.add("disappeared");
+                            clickChair = true;
+                            tips.innerHTML = "So good to sit down, don't you think?"
+                            tips.classList.add("tip")
+                        });
+
+                        vrGlasses.addEventListener("click", () => {
+                            buttonSound3.play()
+
+                            if (!clickVRGlasses) {
+                                placeVRGlasses = currentItem;
+                                currentItem++;
+                            }
+
+                            inventoryItems[placeVRGlasses].innerHTML = `<img src="img/videoglasses.png" alt="virtual reality glasses" width="60px" margin-top="10px">`;
+                            inventoryItems[placeVRGlasses].setAttribute("data-tool", "virtual reality glasses");
+                            inventoryItems[placeVRGlasses].style.paddingTop = "10px";
+
+                            vrGlasses.classList.add("disappeared");
+                            clickVRGlasses = true;
+                            tips.innerHTML = "Nice, you found the virtual reality glasses!"
+                            tips.classList.add("tip")
+                        });
+
+                        mouse.addEventListener("click", () => {
+
+                            buttonSound2.play()
+
+                            if (!clickMouse) {
+                                placeMouse = currentItem;
+                                currentItem++;
+                            }
+                            mouse.classList.add("disappeared");
+                            clickMouse = true;
+                            inventoryItems[placeMouse].innerHTML = `<img src="img/mouse.png" alt="mouse" width="36px">`;
+                            inventoryItems[placeMouse].setAttribute("data-tool", "mouse");
+                            inventoryItems[placeMouse].style.paddingTop = "23px";
+                            monitor1.style.display = "none";
+                            tips.innerHTML = "Very good!";
+
+
+                            if (clickMouse && (clickHeadphones && clickChair && clickVRGlasses)) {
+                                tips.innerHTML = "Now click on the monitor screen."
+
+                            }
+                            monitor.addEventListener("click", () => {
+                                buttonSound3.play();
+
+                                if (!clickMonitor && (clickHeadphones && clickChair && clickVRGlasses)) {
+                                    clickMonitor = true;
+                                    tips.innerHTML = "Let's start!";
+
+
+                                    // enter in the virtual world
+
+                                    if (clickMonitor) {
+                                        monitor.style.animation = "turnOnDesktop 4s linear 0.3s calc(1)";
+                                        /*monitor.style.animationName = "turnOnDesktop";
+                                        monitor.style.animationTimingFunction = "linear";
+                                        monitor.style.animationDuration = 4 + 's';
+                                        monitor.style.animationDelay = '0.3s';
+                                        monitor.style.animationIterationCount = "calc(" + 1 + ")";*/
+                                        inventory.classList.add("disappeared");
+                                        var delayInMilliseconds = 4280; //4.28 seconds
+
+                                        setTimeout(function () {
+                                            section3.classList.add("disappeared");
+                                            music1.pause();
+                                            section4.classList.remove("disappeared");
+                                            music2.play();
+                                            music2.volume = 0.2;
+                                            let games = document.querySelector(".gamesFolder");
+
+                                            games.addEventListener("click", () => {
+
+                                            });
+                                        }, delayInMilliseconds);
+
+                                    }
+                                }
+
+                                else if (!clickMonitor && (clickHeadphones && clickChair && !clickVRGlasses)) {
+                                    tips.innerHTML = "Pick first the virtual reality glasses!";
+
+                                }
+                                else if (!clickMonitor && (clickHeadphones && !clickChair && clickVRGlasses)) {
+                                    tips.innerHTML = "Relax and sit down on the chair."
+
+
+                                }
+                                else if (!clickMonitor && (!clickHeadphones && clickChair && clickVRGlasses)) {
+                                    tips.innerHTML = "Pick first the headphones!"
+
+
+                                } else if (!clickMonitor && clickMouse && (clickHeadphones || (clickChair || clickVRGlasses))) {
+                                    tips.innerHTML = "You have two more items to find.";
+
+                                } else {
+                                }
+
+
+                            });
+                            tips.classList.add("tip")
+
+
+                        });
+                        
+                        
+                    }
+                });
+
+            }
+        }
+    </script>
+</body>
+
+</html>
