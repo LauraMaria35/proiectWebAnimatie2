@@ -283,7 +283,7 @@ h3{
     0%{transform:scale(1) translateX(0%) translateY(0%);
        
     }100%{
-transform:scale(12) translateX(17%) translateY(10%);
+transform:scale(10) translateX(17%) translateY(10%);
 
     }
 }
@@ -316,4 +316,14 @@ transform:scale(12) translateX(17%) translateY(10%);
 }
 .tip{
     padding-top: 25px;
+}
+
+#section2{
+   
+    width: 960px;
+    height: 540px;
+    margin: 0 auto;
+    position: absolute;
+    top: 0px;
+
 }
